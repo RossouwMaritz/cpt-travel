@@ -3,6 +3,7 @@ import { buildMetadata } from '@/lib/metadata'
 import PageHero from '@/components/ui/PageHero'
 import AnimateIn from '@/components/ui/AnimateIn'
 import Button from '@/components/ui/Button'
+import { viatorUrl } from '@/lib/viator'
 
 export const metadata: Metadata = buildMetadata({
   title: 'Cape Town Attractions — Top Things to See and Do',
@@ -18,8 +19,8 @@ const attractions = [
     category: 'Nature',
     emoji: '⛰️',
     duration: 'Half day',
-    price: 'R390–R430 (cable car)',
     mustSee: true,
+    viatorHref: viatorUrl('Table Mountain cable car Cape Town', 'attr-table-mountain'),
     description: 'The defining icon of Cape Town — a flat-topped mountain rising 1,086m above the city. Take the rotating cable car to the summit for 360° views across the Cape Peninsula, or hike up one of several trails.',
     tips: [
       'Book cable car tickets online to skip the queue.',
@@ -34,8 +35,8 @@ const attractions = [
     category: 'Nature',
     emoji: '🌊',
     duration: 'Full day',
-    price: 'R353 park entry',
     mustSee: true,
+    viatorHref: viatorUrl('Cape Point day trip Cape Town', 'attr-cape-point'),
     description: 'The dramatic southwestern tip of the African continent. Towering cliffs, crashing Atlantic swells, resident baboons, and the iconic lighthouse. Part of the Table Mountain National Park — combine with a Cape Peninsula road trip.',
     tips: [
       'Drive the Chapman\'s Peak route on the way there (toll road).',
@@ -50,8 +51,8 @@ const attractions = [
     category: 'Wildlife',
     emoji: '🐧',
     duration: '2 hours',
-    price: 'R220 entry',
     mustSee: true,
+    viatorHref: viatorUrl('Boulders Beach penguins Cape Town', 'attr-boulders'),
     description: 'A sheltered beach near Simon\'s Town is home to a thriving colony of African penguins — one of the few places on earth you can walk alongside these birds on a beach. Utterly charming.',
     tips: [
       'Go in the morning before tour buses arrive.',
@@ -66,8 +67,8 @@ const attractions = [
     category: 'History',
     emoji: '🏛️',
     duration: 'Half day',
-    price: 'R600 (ferry + tour)',
     mustSee: true,
+    viatorHref: viatorUrl('Robben Island tour Cape Town', 'attr-robben-island'),
     description: 'The island where Nelson Mandela spent 18 of his 27 prison years. The tour includes a former political prisoner as guide and a visit to Mandela\'s cell. One of the most moving experiences in South Africa.',
     tips: [
       'Book weeks in advance — it sells out constantly.',
@@ -82,8 +83,8 @@ const attractions = [
     category: 'Nature',
     emoji: '🌿',
     duration: '3 hours',
-    price: 'R220 entry',
     mustSee: false,
+    viatorHref: viatorUrl('Kirstenbosch Gardens Cape Town', 'attr-kirstenbosch'),
     description: 'One of the great botanical gardens of the world, set on the eastern slopes of Table Mountain. The Boomslang canopy walkway weaves through the treetops. Summer sunset concerts on the lawns are a Cape Town institution.',
     tips: [
       'Summer concerts (Nov–Apr) on Sunday evenings are unmissable — bring a picnic.',
@@ -98,7 +99,6 @@ const attractions = [
     category: 'Nature',
     emoji: '🛣️',
     duration: '1 hour (drive only)',
-    price: 'R65 toll',
     mustSee: false,
     description: "One of the world's most spectacular coastal drives — a narrow road carved into a cliff face above the Atlantic, with views that are genuinely jaw-dropping. Often featured in international car commercials.",
     tips: [
@@ -114,8 +114,8 @@ const attractions = [
     category: 'Wine',
     emoji: '🍷',
     duration: 'Full day',
-    price: 'Variable (tasting fees R80–R250 per estate)',
     mustSee: false,
+    viatorHref: viatorUrl('Stellenbosch wine tour Cape Town', 'attr-stellenbosch'),
     description: 'South Africa\'s premier wine region, about 50km from Cape Town. Historic Cape Dutch estates, world-class Cabernet Sauvignon and Chenin Blanc, and some of the best food-and-wine pairings you\'ll find anywhere.',
     tips: [
       'Book a driver or use a wine tour operator — don\'t drink and drive.',
@@ -130,8 +130,8 @@ const attractions = [
     category: 'Wine',
     emoji: '🏰',
     duration: 'Full day',
-    price: 'Variable',
     mustSee: false,
+    viatorHref: viatorUrl('Franschhoek wine tour Cape Town', 'attr-franschhoek'),
     description: 'A charming valley town founded by French Huguenots, now home to some of South Africa\'s finest restaurants and wine estates. The main street, Huguenot Road, is lined with excellent options.',
     tips: [
       'The Franschhoek Wine Tram is a fun way to hop between estates.',
@@ -146,8 +146,8 @@ const attractions = [
     category: 'Nature',
     emoji: '🦁',
     duration: '3 hours',
-    price: 'Free',
     mustSee: false,
+    viatorHref: viatorUrl("Lion's Head hike Cape Town", 'attr-lions-head'),
     description: 'The conical peak that sits between Table Mountain and Signal Hill, offering some of the best views in Cape Town — including a unique angle on Table Mountain itself. A challenging but rewarding hike with chains and ladders near the summit.',
     tips: [
       'The full moon hike (monthly) is a Cape Town bucket-list experience — start at sunset.',
@@ -162,8 +162,8 @@ const attractions = [
     category: 'Nature',
     emoji: '⛵',
     duration: '2–3 hours',
-    price: 'Free (boat trips extra)',
     mustSee: false,
+    viatorHref: viatorUrl('Hout Bay boat tour Cape Town', 'attr-hout-bay'),
     description: 'A working fishing harbour set in a dramatic mountain-ringed bay, about 20 minutes from Camps Bay. The harbour market, fresh fish, and seal boat trips make it a great half-day stop on a Peninsula drive.',
     tips: [
       'Take a boat trip out to Duiker Island to see Cape fur seals up close.',
@@ -227,7 +227,6 @@ export default function AttractionsPage() {
                       </div>
                       <div className="flex items-center gap-3 mt-1 text-xs text-gray-400">
                         <span>⏱ {a.duration}</span>
-                        <span>💰 {a.price}</span>
                       </div>
                     </div>
                   </div>
@@ -252,6 +251,22 @@ export default function AttractionsPage() {
                 <p className="text-xs text-gray-500 leading-relaxed">
                   <span className="font-semibold text-gray-600">Practical: </span>{a.practical}
                 </p>
+
+                {a.viatorHref && (
+                  <div className="mt-5 pt-5 border-t border-gray-100">
+                    <a
+                      href={a.viatorHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-ocean to-brand-sky text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-[0_4px_12px_rgba(0,119,182,0.3)] hover:shadow-[0_6px_20px_rgba(0,119,182,0.4)] hover:-translate-y-0.5 transition-all duration-200"
+                    >
+                      Book on Viator
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
+                )}
               </div>
             </article>
           </AnimateIn>

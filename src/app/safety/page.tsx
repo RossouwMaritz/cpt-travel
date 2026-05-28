@@ -7,6 +7,7 @@ import TipsList from '@/components/safety/TipsList'
 import AffiliateSlot from '@/components/safety/AffiliateSlot'
 import SectionWrapper from '@/components/ui/SectionWrapper'
 import Button from '@/components/ui/Button'
+import { viatorUrl } from '@/lib/viator'
 
 export const metadata: Metadata = buildMetadata({
   title: 'Is Cape Town Safe? An Honest 2026 Traveller\'s Guide',
@@ -64,8 +65,8 @@ export default function SafetyPage() {
           title="Book a Guided City Tour"
           description="See Cape Town safely with a knowledgeable local guide."
           ctaText="Browse Tours on Viator"
-          ctaHref="#"
-          enabled={false}
+          ctaHref={viatorUrl('Cape Town tours', 'safety-city-tours')}
+          enabled={true}
         />
 
         <SafetySection id="safe-areas" heading="Where Tourists Stay: The Safe Corridor">
@@ -114,8 +115,8 @@ export default function SafetyPage() {
           title="Township Tours with Local Guides"
           description="Experience authentic Cape Town with trusted local guides."
           ctaText="Find a Local Guide"
-          ctaHref="#"
-          enabled={false}
+          ctaHref={viatorUrl('Cape Town township tour', 'safety-township')}
+          enabled={true}
         />
 
         <SafetySection id="tips" heading="25 Safety Tips for Cape Town Visitors">
@@ -166,8 +167,8 @@ export default function SafetyPage() {
           title="Evening Tours and Experiences"
           description="Discover Cape Town's nightlife safely with organised tours."
           ctaText="Browse Evening Experiences"
-          ctaHref="#"
-          enabled={false}
+          ctaHref={viatorUrl('Cape Town evening tour', 'safety-evening')}
+          enabled={true}
         />
 
         <SafetySection id="verdict" heading="The Verdict: Should You Visit?" highlight>
