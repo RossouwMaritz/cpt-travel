@@ -33,6 +33,9 @@ const sections = [
             </div>
           ))}
         </div>
+        <div className="mt-4">
+          <Button href="/best-time-to-visit" variant="secondary">Full Season Guide →</Button>
+        </div>
       </>
     ),
   },

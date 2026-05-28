@@ -9,6 +9,7 @@ module.exports = {
     const priorities = {
       '/': 1.0,
       '/safety': 0.9,
+      '/best-time-to-visit': 0.8,
       '/neighborhoods': 0.6,
       '/attractions': 0.6,
       '/travel-tips': 0.6,
