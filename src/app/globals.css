@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-ocean: #0077B6;
+  --color-brand-sky: #00B4D8;
+  --color-brand-sand: #F4A261;
+  --color-brand-mountain: #2D6A4F;
+  --color-brand-slate: #1E293B;
+  --color-brand-mist: #F0F7FF;
+
+  --font-display: var(--font-raleway), system-ui, sans-serif;
+  --font-body: var(--font-nunito), system-ui, sans-serif;
+}
+
+/* ─── Base ────────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1E293B;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+h3, h4 { letter-spacing: -0.01em; }
+
+::selection {
+  background-color: #0077B6;
+  color: #ffffff;
+}
+
+/* ─── Animations ──────────────────────────────────────────── */
+
+@keyframes orb-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -20px) scale(1.05); }
+  66%       { transform: translate(-20px, 15px) scale(0.97); }
+}
+
+@keyframes orb-drift-reverse {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(-25px, 20px) scale(1.04); }
+  66%       { transform: translate(20px, -10px) scale(0.98); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer-slide {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-orb        { animation: orb-drift 12s ease-in-out infinite; }
+.animate-orb-slow   { animation: orb-drift-reverse 18s ease-in-out infinite; }
+.animate-orb-mid    { animation: orb-drift 9s ease-in-out infinite 2s; }
+
+.animate-fade-up    { animation: fade-up 0.7s cubic-bezier(.22,1,.36,1) both; }
+.animate-fade-up-d1 { animation: fade-up 0.7s cubic-bezier(.22,1,.36,1) 0.15s both; }
+.animate-fade-up-d2 { animation: fade-up 0.7s cubic-bezier(.22,1,.36,1) 0.3s both; }
+.animate-fade-up-d3 { animation: fade-up 0.7s cubic-bezier(.22,1,.36,1) 0.45s both; }
+.animate-fade-in    { animation: fade-in 1s ease both; }
