@@ -1,7 +1,8 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://capetownguide.co.za',
+  siteUrl: process.env.SITE_URL || 'https://capetownsafe.co.za',
   generateRobotsTxt: true,
+  exclude: ['/*.svg', '/*.xml', '/*.txt', '/*.html'],
   changefreq: 'weekly',
   priority: 0.7,
   transform: async (config, path) => {
