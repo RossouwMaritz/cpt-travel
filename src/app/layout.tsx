@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Nunito, Raleway } from 'next/font/google'
 import './globals.css'
 import { defaultMetadata } from '@/lib/metadata'
+import { webSiteSchema } from '@/lib/schema'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
@@ -27,6 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${nunito.variable} ${raleway.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema()) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

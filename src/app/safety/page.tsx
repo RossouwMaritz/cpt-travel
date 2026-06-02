@@ -8,6 +8,30 @@ import AffiliateSlot from '@/components/safety/AffiliateSlot'
 import SectionWrapper from '@/components/ui/SectionWrapper'
 import Button from '@/components/ui/Button'
 import { viatorUrl } from '@/lib/viator'
+import { faqPageSchema } from '@/lib/schema'
+
+const faqs = [
+  {
+    question: 'Is Cape Town safe for tourists?',
+    answer: 'Yes, Cape Town is safe for tourists who stay in the tourist corridor — V&A Waterfront, City Bowl, Atlantic Seaboard, and Constantia. The vast majority of visitors have wonderful, incident-free trips. Basic urban awareness is all that is required.',
+  },
+  {
+    question: 'Which areas of Cape Town are safe for tourists?',
+    answer: 'The safest areas for tourists are the V&A Waterfront, Sea Point, Camps Bay, the City Bowl and De Waterkant, and Constantia. These areas have high foot traffic, private security, and low tourist-targeted crime.',
+  },
+  {
+    question: 'What areas should tourists avoid in Cape Town?',
+    answer: 'Tourists should avoid the Cape Flats townships independently. Exercise caution in parts of Woodstock, Salt River, and the CBD late at night. Township visits are safe and worthwhile when done with a reputable guided tour operator.',
+  },
+  {
+    question: 'Is Cape Town safe at night?',
+    answer: 'Cape Town is safe at night in the tourist corridor. Camps Bay strip, Sea Point promenade, De Waterkant, and the V&A Waterfront are all active and safe in the evenings. Use Uber rather than walking after dark, and pre-book your ride before leaving a venue.',
+  },
+  {
+    question: 'What is the safest way to get around Cape Town?',
+    answer: 'Uber and Bolt are the safest and most practical transport options for tourists in Cape Town. Both apps are widely available in the tourist corridor, prices are low by international standards, and trips are trackable. Never use unlicensed taxis that approach you on the street.',
+  },
+]
 
 export const metadata: Metadata = buildMetadata({
   title: 'Is Cape Town Safe? An Honest 2026 Traveller\'s Guide',
@@ -18,6 +42,10 @@ export const metadata: Metadata = buildMetadata({
 export default function SafetyPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(faqs)) }}
+      />
       <SafetyHero />
 
       <SectionWrapper>

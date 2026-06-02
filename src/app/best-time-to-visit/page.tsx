@@ -6,6 +6,26 @@ import Button from '@/components/ui/Button'
 import SectionWrapper from '@/components/ui/SectionWrapper'
 import AffiliateSlot from '@/components/safety/AffiliateSlot'
 import { viatorUrl } from '@/lib/viator'
+import { faqPageSchema } from '@/lib/schema'
+
+const faqs = [
+  {
+    question: 'What is the best time to visit Cape Town?',
+    answer: 'Autumn (March to May) is the best time to visit Cape Town for most travellers — warm weather, lower prices, fewer crowds, and wine harvest season in the Winelands. Summer (November to February) offers the best beach weather but with peak prices and the largest crowds.',
+  },
+  {
+    question: 'What is Cape Town like in winter?',
+    answer: 'Cape Town in winter (June to August) is cool and occasionally wet, but rarely cold by international standards. It is the cheapest and least crowded time to visit. Winter is also whale watching season, with Southern Right whales visible near Hermanus on the False Bay coast, about 90 minutes from Cape Town.',
+  },
+  {
+    question: 'When is peak tourist season in Cape Town?',
+    answer: 'Peak tourist season in Cape Town is November to February (southern hemisphere summer). December and January are the busiest and most expensive months. Book accommodation months in advance if visiting over Christmas and New Year.',
+  },
+  {
+    question: 'When is whale watching season near Cape Town?',
+    answer: 'Whale watching season near Cape Town runs from June to November, peaking in August and September. Southern Right whales calve in Walker Bay near Hermanus, about 90 minutes from Cape Town. The Hermanus Whale Festival takes place in September.',
+  },
+]
 
 export const metadata: Metadata = buildMetadata({
   title: 'Best Time to Visit Cape Town (2026 Season Guide)',
@@ -93,6 +113,10 @@ const events = [
 export default function BestTimeToVisitPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(faqs)) }}
+      />
       <PageHero
         label="Cape Town"
         title="Best Time to Visit"

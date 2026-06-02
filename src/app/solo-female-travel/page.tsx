@@ -6,6 +6,26 @@ import Button from '@/components/ui/Button'
 import SectionWrapper from '@/components/ui/SectionWrapper'
 import AffiliateSlot from '@/components/safety/AffiliateSlot'
 import { viatorUrl } from '@/lib/viator'
+import { faqPageSchema } from '@/lib/schema'
+
+const faqs = [
+  {
+    question: 'Is Cape Town safe for solo female travellers?',
+    answer: 'Yes, Cape Town is safe for solo female travellers who stay in the tourist corridor and take sensible precautions. Thousands of women travel solo in Cape Town each year without incident. The main risks are opportunistic petty theft and occasional unwanted attention, not the violent crime that shapes Cape Town\'s headline reputation.',
+  },
+  {
+    question: 'Where should solo female travellers stay in Cape Town?',
+    answer: 'Sea Point, De Waterkant, and the V&A Waterfront are the best areas for solo female travellers. Sea Point has a social promenade, excellent restaurants, and a strong community feel. De Waterkant is a compact, walkable village. The V&A has maximum security and constant foot traffic around the clock.',
+  },
+  {
+    question: 'Is it safe to walk alone in Cape Town as a woman?',
+    answer: 'Walking alone is safe during the day in tourist areas like Sea Point promenade, the V&A Waterfront, De Waterkant, and Camps Bay strip. After dark, use Uber rather than walking, even for short distances. Pre-book your ride before leaving a venue rather than waiting outside.',
+  },
+  {
+    question: 'What transport should solo female travellers use in Cape Town?',
+    answer: 'Uber and Bolt are the essential transport options for solo female travellers in Cape Town. Download both apps before you arrive, share your trip details with a contact, and never accept lifts from unlicensed taxis or strangers who approach you.',
+  },
+]
 
 export const metadata: Metadata = buildMetadata({
   title: 'Is Cape Town Safe for Solo Female Travellers? (2026 Guide)',
@@ -55,6 +75,10 @@ const tips = [
 export default function SoloFemaleTravelPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(faqs)) }}
+      />
       <PageHero
         label="Cape Town"
         title="Solo Female Travel"
