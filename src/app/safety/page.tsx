@@ -9,6 +9,7 @@ import SectionWrapper from '@/components/ui/SectionWrapper'
 import Button from '@/components/ui/Button'
 import { viatorUrl } from '@/lib/viator'
 import { faqPageSchema } from '@/lib/schema'
+import FaqSection from '@/components/ui/FaqSection'
 
 const faqs = [
   {
@@ -201,6 +202,8 @@ export default function SafetyPage() {
           ctaHref={viatorUrl('Cape Town evening tour', 'safety-evening')}
           enabled={true}
         />
+
+        <FaqSection faqs={faqs} />
 
         <SafetySection id="verdict" heading="The Verdict: Should You Visit?" highlight>
           <p className="text-lg font-medium text-brand-slate">

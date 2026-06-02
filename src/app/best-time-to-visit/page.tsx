@@ -7,6 +7,7 @@ import SectionWrapper from '@/components/ui/SectionWrapper'
 import AffiliateSlot from '@/components/safety/AffiliateSlot'
 import { viatorUrl } from '@/lib/viator'
 import { faqPageSchema } from '@/lib/schema'
+import FaqSection from '@/components/ui/FaqSection'
 
 const faqs = [
   {
@@ -232,6 +233,8 @@ export default function BestTimeToVisitPage() {
             ))}
           </div>
         </AnimateIn>
+
+        <FaqSection faqs={faqs} />
 
         {/* Verdict */}
         <AnimateIn direction="up">
