@@ -11,6 +11,7 @@ module.exports = {
       '/safety': 0.9,
       '/best-time-to-visit': 0.8,
       '/solo-female-travel': 0.8,
+      '/cape-town-families': 0.8,
       '/neighborhoods': 0.7,
       '/attractions': 0.6,
       '/travel-tips': 0.6,

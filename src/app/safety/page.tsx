@@ -63,8 +63,9 @@ export default function SafetyPage() {
           <p>
             The key rule: <strong>stay in the tourist corridor</strong> (V&A Waterfront, City Bowl, Atlantic Seaboard, Constantia) and you will be as safe as you would be in most European cities. Wander far outside it without a guide, and the risk profile changes significantly.
           </p>
-          <div className="mt-4">
+          <div className="mt-4 flex flex-col sm:flex-row gap-3">
             <Button href="/solo-female-travel" variant="secondary">Solo Female Travel Guide →</Button>
+            <Button href="/cape-town-families" variant="secondary">Cape Town with Families →</Button>
           </div>
         </SafetySection>
 
